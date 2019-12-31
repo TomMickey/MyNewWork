@@ -1,0 +1,18 @@
+1.yum search 包
+2.yum install 包名
+3.oracle安装日志文件位置
+4.df -h查看磁盘使用情况
+5.解决centos7/redhat7安装oracle11g到%70报错问题
+Linux/Centos 安装oracle报错“调用makefile '/oracle/product/11.2.0/dbhome_1/sysman/lib/ins_emagent.mk的目标” 解决办法
+#vim/oracle-11g/app1/oracle/product/11.2.0/dbhome_1/sysman/lib/ins_emagent.mk
+加入 -lnnz11
+$(MK_EMAGENT_NMECTL) -lnnz11
+6.oracle配置远程监听TNS
+C:\Users\NI\Desktop\pl\instantclient_18_3\下的listener.ora配置文件和tnsnames.ora配置文件
+7.oracle命令
+sqlplus / as sysdba
+conn / as sysdba
+lsrnctl start 启动监听 
+8.yum提示Another app is currently holding the yum lock; waiting for it to exit...？
+可能是系统自动升级正在运行，yum在锁定状态中。已经有一个yum进程在运行了，使用kill干掉它：
+可以通过强制关掉yum进程：rm -f /var/run/yum.id
